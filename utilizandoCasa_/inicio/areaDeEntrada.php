@@ -38,7 +38,7 @@
                     </tr>
 
                     <?php
-                    $pesquisaPro = $pdo->query("SELECT * FROM informacao INNER JOIN login ON informacao.login_id_login = login.id_login WHERE informacao.login_id_login = $id_session");
+                    $pesquisaPro = $pdo->query("SELECT id_produto,quantidade,produto,validade FROM informacao INNER JOIN login ON informacao.login_id_login = login.id_login WHERE informacao.login_id_login = $id_session");
                     //date('d/m/Y', strtotime($veriPro));
                     while ($veriPro = $pesquisaPro->fetch()) {
                         $data = $veriPro['validade'];
